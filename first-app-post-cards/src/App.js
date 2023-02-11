@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./component/Card.css"
+import Card from "./component/Card"
+
+const posts =[
+  "HelloWorld1",
+  "Hello World2",
+  "Hello World3"
+]
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Card className="card">
+    {posts.map(e=><Card>{e}</Card>)}
+    </Card>
   );
 }
 
