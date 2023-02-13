@@ -1,12 +1,12 @@
 import "./Card.css"
 
 function Card(props){
-    console.log(props.children)
+ 
     return(
-        <h3 className="container">
+        <div className = "card">
             {props.children}
-        </h3>
-    )
+        </div>
+    );
 }
 
 export default Card

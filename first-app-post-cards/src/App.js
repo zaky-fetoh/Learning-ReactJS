@@ -1,17 +1,17 @@
 import "./component/Card.css"
 import Card from "./component/Card"
-
+import Post from "./component/Post"
 const posts =[
-  "HelloWorld1",
-  "Hello World2",
-  "Hello World3"
+  {Header:"HelloWorld1",Content:"LaHsadNAMes"},
+  {Header:"HelloWorld3",Content:"LaHsaMarydas"},
+  {Header:"HelloWorld4",Content:"LaHsadmAhmosd asdas"},
 ]
 
 
 function App() {
   return (
-    <Card className="card">
-    {posts.map(e=><Card>{e}</Card>)}
+    <Card>
+    {posts.map(e=><Post postHeader={e.Header} postBody={e.Content} />)}
     </Card>
   );
 }
