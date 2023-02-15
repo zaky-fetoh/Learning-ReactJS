@@ -1,0 +1,23 @@
+.postHeader{
+    text-align: center;
+    text-decoration: underline;
+    background: black;
+    color: aliceblue;
+    padding: 2%;
+    border-radius: 20%;
+    border: 3px solid;
+}
+
+.postContent{
+    border-radius: 5%;
+    border: 3px solid;
+    background: black;
+    color: aliceblue;
+}
+
+
+.post{ 
+    border: 4px red solid;
+    background: gray;
+    margin-bottom: 10px;
+}
