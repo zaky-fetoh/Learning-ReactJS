@@ -1,9 +1,6 @@
 import "./InputNewsForm.css"
 import react from "react"
 
-
-
-
 export default function(props){
     const [headerValue,setHeaderValue] = react.useState("")
     const [contentValue, setContentValue] = react.useState("")
