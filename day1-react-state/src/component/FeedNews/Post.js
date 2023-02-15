@@ -1,12 +1,12 @@
-import "./Post.css"
+import styles from "./Post.module.css"
 
 function PostHeader(props){
-    return<h3 className="postHeader">
+    return<h3 className={styles.postHeader}>
         {props.children}
     </h3>
 }
 function PostContent(props){
-    return <h5 className="postContent">
+    return <h5 className={styles.postContent}>
         {props.children}
     </h5>
 }
@@ -19,7 +19,7 @@ export default function(props){
     const deleteClickHandler = ()=>{
         props.postOps.delete(props.id)
     }
-    return <div className="post">
+    return <div className={styles.post}>
         <PostHeader> {props.header}</PostHeader>
         <PostContent>{props.content}</PostContent>
         <div style={{textAlign:"center"}}>
