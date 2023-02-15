@@ -13,8 +13,18 @@ function PostContent(props){
 
 
 export default function(props){
+    const editClickHandler = ()=>{
+        props.postOps.update(props.id, "post")
+    }
+    const deleteClickHandler = ()=>{
+        props.postOps.delete(props.id)
+    }
     return <div className="post">
         <PostHeader> {props.header}</PostHeader>
         <PostContent>{props.content}</PostContent>
+        <div style={{textAlign:"center"}}>
+            <button onClick={editClickHandler}>Edit</button> 
+            <button onClick={deleteClickHandler}>Delete</button>
+        </div>
     </div>
 }

@@ -15,9 +15,6 @@ export default function(props){
     }
     const publishOnClickHandler = (event)=>{
         event.preventDefault()
-        console.log({
-            headerValue, contentValue,
-        })
         props.updateContent({
             header:headerValue, content:contentValue,
         })
