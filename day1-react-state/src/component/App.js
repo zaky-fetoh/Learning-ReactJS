@@ -1,21 +1,25 @@
 import Wall from "./FeedNews/FeedNews"
 import Post from "./FeedNews/Post";
-
+import InputNews from "./AddNews/InputNews"
+import react from "react"
 const posts =[
-  {header:"Header1", content:"content1"},
-  {header:"Header2", content:"content2"},
-  {header:"Header3", content:"content3"},
-  {header:"Header4", content:"content4"},
-  {header:"Header5", content:"content5"},
 ]
 
 function App() {
-  return (<div>
-    <h1 style={{"text-align":"center"}}>
+  const [v, s] = react.useState("")
+  const updateContent = (post)=>{
+    posts.push(post);
+    console.log(posts[0])
+    s(posts.length)
+  }
+
+  return (<>
+    <h1 style={{textAlign:"center"}}>
       Wall of Current Events </h1>
+    <InputNews updateContent={updateContent}/>
     <Wall>
       {posts.map(e => <Post header={e.header} content={e.content}></Post>)}
-    </Wall></div>
+    </Wall></>
   );
 }
 
