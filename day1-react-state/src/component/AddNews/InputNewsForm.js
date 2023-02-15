@@ -1,4 +1,4 @@
-import "./InputNewsForm.css"
+import styles from "./InputNewsForm.module.css"
 import react from "react"
 
 export default function(props){
@@ -20,11 +20,11 @@ export default function(props){
     }
 
     return <form>
-        <div className="container">
+        <div className={styles.container}>
         <label>Post Header:</label> <br/>
         <input type="text" value={headerValue} onChange={headerOnChangeHadler}/> <br/>
         <label>Post Content:</label><br/>
-        <input className="labelf" type="text" value={
+        <input className={styles.labelf} type="text" value={
            contentValue
         } onChange={contentOnChangeHandler}/><br/>
         </div>
