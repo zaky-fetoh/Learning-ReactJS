@@ -1,14 +1,22 @@
 import AddAge from "./component/AddAge";
 import ShowsInfo from "./component/ShowsInfo";
+import react from 'react';
 
-let db = []; 
+let db = [
+  {name: "adsASD", age:"23"},
+  {name: "adsASD", age:"23"},
+  {name: "adsASD", age:"23"},
+]; 
 
 
-function App() {
+
+function App() {  
+  const [DB, setDB] = react.useState([])
+
   return (
     <div>
-      <AddAge />
-      <ShowsInfo entries={db} />      
+      <AddAge insertNewElement={setDB}/>
+      <ShowsInfo entries={DB} />      
     </div>
   );
 }

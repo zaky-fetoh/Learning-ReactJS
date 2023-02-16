@@ -1,15 +1,14 @@
-
-
+import styles from "./ShowsInfo.module.css";
 
 function Entry(props){
-    return <div>
+    return <h3 className={styles.entry}>
         {`${props.name} (${props.age} years old)`}
-    </div>
+    </h3>
 }
 
 
 export default function(props){
-    return <div>
-        {props.entries.map(e=><Entry name={e.name} age={e.age}/>)}
+    return <div className={styles.container}>
+        {props.entries.map(e=><Entry key={e.id} name={e.name} age={e.age}/>)}
     </div>
 }
