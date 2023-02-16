@@ -1,0 +1,25 @@
+.inputForm{
+    background-color: aliceblue;
+    text-align: center;
+    padding: 5%;
+    border-radius: 5px;
+}
+label{
+    font-size: 1.4em;
+}
+
+input{
+    padding-bottom: 5px;
+    padding-left: 40%;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+button{
+    margin-top: 7px;
+    background-color: blueviolet;
+    border-radius: 0%;
+    border: 2px green solid;
+    color: white;
+    font-size: 1.5em;
+}
