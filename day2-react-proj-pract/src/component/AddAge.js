@@ -16,14 +16,18 @@ function InputForm(props){
         }))
     }
     const onSubmitClick = (event)=>{
+        event.preventDefault();
+        if(formStates.name.trim() ==="")
+            {props.showMsg({show:true, msg:"interCorrectData"})
+            return
+        }
+
         props.insertNewElement(prev=>([{
             ...formStates, id:Math.random().toString(),
         }, ...prev]))
-        console.log(formStates)
         setFormStates({
             name:"", age:"",
         })
-        event.preventDefault();
     }
 
     return <form>
@@ -41,6 +45,7 @@ function InputForm(props){
 
 export default function(props){
     return <div className={styles.inputForm}>
-        <InputForm insertNewElement={props.insertNewElement}/>
+        <InputForm insertNewElement={props.insertNewElement} 
+        showMsg={props.showMsg}/>
     </div>
 }

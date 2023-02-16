@@ -1,22 +1,18 @@
 import AddAge from "./component/AddAge";
 import ShowsInfo from "./component/ShowsInfo";
 import react from 'react';
-
-let db = [
-  {name: "adsASD", age:"23"},
-  {name: "adsASD", age:"23"},
-  {name: "adsASD", age:"23"},
-]; 
-
-
+import Dialog from "./component/dialog";
 
 function App() {  
   const [DB, setDB] = react.useState([])
-
+  const [diaDic, setDiaDic] = react.useState({
+    show:false, msg: "",
+  })
   return (
     <div>
-      <AddAge insertNewElement={setDB}/>
-      <ShowsInfo entries={DB} />      
+      <AddAge insertNewElement={setDB} showMsg={setDiaDic}/>
+      <ShowsInfo entries={DB} />
+      <Dialog show={diaDic.show} msg={diaDic.msg} condt={setDiaDic}/>
     </div>
   );
 }

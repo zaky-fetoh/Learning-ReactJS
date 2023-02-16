@@ -1,0 +1,17 @@
+.whiteScreen{
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    margin: 0px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-size: 3em;
+    /* text-align: center; */
+    /* padding-top: 50%; */
+    color: red;
+    visibility: visible;
+}
+.hidden{
+    visibility: hidden;
+}

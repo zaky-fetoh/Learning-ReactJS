@@ -11,9 +11,11 @@ label{
 
 input{
     padding-bottom: 5px;
-    padding-left: 40%;
+    padding-right: 40%;
     margin-bottom: 7px;
     margin-top: 7px;
+    text-align: left;
+    font-size: 1.3em;
 }
 
 button{
