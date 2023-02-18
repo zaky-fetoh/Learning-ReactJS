@@ -17,13 +17,13 @@ function App() {
   },[state])
 
   const Click =()=>{
-    if(state) setStart(Date.now())
+    if(!state) setStart(Date.now())
     setState(pre=>!pre)
   }
 
   return (
     <div>
-      <Watch time={state && showTime || ""}/>
+      <Watch time={showTime || ""}/>
       <Control 
       startClick={Click}
       name={!state && "start" ||"stop"}/>
