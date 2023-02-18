@@ -1,28 +1,28 @@
-.inputForm{
-    background-color: aliceblue;
-    text-align: center;
-    padding: 5%;
-    border-radius: 5px;
-    margin-bottom: 5%;
+.inputForm {
+  background-color: aliceblue;
+  text-align: center;
+  padding: 5%;
+  border-radius: 5px;
+  margin-bottom: 5%;
 }
-label{
-    font-size: 1.4em;
-}
-
-input{
-    padding-bottom: 5px;
-    padding-right: 40%;
-    margin-bottom: 7px;
-    margin-top: 7px;
-    text-align: left;
-    font-size: 1.3em;
+label {
+  font-size: 1.4em;
 }
 
-button{
-    margin-top: 7px;
-    background-color: blueviolet;
-    border-radius: 0%;
-    border: 2px green solid;
-    color: white;
-    font-size: 1.5em;
+input {
+  padding-bottom: 5px;
+  padding-right: 40%;
+  margin-bottom: 7px;
+  margin-top: 7px;
+  text-align: left;
+  font-size: 1.3em;
+}
+
+button {
+  margin-top: 7px;
+  background-color: blueviolet;
+  border-radius: 0%;
+  border: 2px green solid;
+  color: white;
+  font-size: 1.5em;
 }

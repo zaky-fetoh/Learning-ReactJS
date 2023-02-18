@@ -1,51 +1,51 @@
 import styles from "./AddAge.module.css";
 import react from "react";
 
-function InputForm(props){ 
+function InputForm(props) {
     const [formStates, setFormStates] = react.useState({
-        name:"", age:""
+        name: "", age: ""
     })
-    const onNameChangeHandler =(event)=>{
-        setFormStates((pre)=>({
-            ...pre,name:event.target.value,
+    const onNameChangeHandler = (event) => {
+        setFormStates((pre) => ({
+            ...pre, name: event.target.value,
         }))
     }
-    const onAgeChangeHandler =(event)=>{
-        setFormStates((pre)=>({
-            ...pre,age:event.target.value,
+    const onAgeChangeHandler = (event) => {
+        setFormStates((pre) => ({
+            ...pre, age: event.target.value,
         }))
     }
-    const onSubmitClick = (event)=>{
+    const onSubmitClick = (event) => {
         event.preventDefault();
-        if(formStates.name.trim() ==="")
-            {props.showMsg({show:true, msg:"interCorrectData"})
+        if (formStates.name.trim() === "") {
+            props.showMsg({ show: true, msg: "interCorrectData" })
             return
         }
 
-        props.insertNewElement(prev=>([{
-            ...formStates, id:Math.random().toString(),
+        props.insertNewElement(prev => ([{
+            ...formStates, id: Math.random().toString(),
         }, ...prev]))
         setFormStates({
-            name:"", age:"",
+            name: "", age: "",
         })
     }
 
     return <form>
-        <label>UserName</label> <br/>
+        <label>UserName</label> <br />
         <input type="text" value={formStates.name}
-                onChange={onNameChangeHandler}/><br/>
-        <label >CurrentAge</label><br/>
+            onChange={onNameChangeHandler} /><br />
+        <label >CurrentAge</label><br />
         <input type="text" value={formStates.age}
-                onChange={onAgeChangeHandler}/> <br/>
+            onChange={onAgeChangeHandler} /> <br />
         <button type="submit"
-            onClick={onSubmitClick}>submit</button> <br/>
+            onClick={onSubmitClick}>submit</button> <br />
     </form>
 
 }
 
-export default function(props){
+export default function (props) {
     return <div className={styles.inputForm}>
-        <InputForm insertNewElement={props.insertNewElement} 
-        showMsg={props.showMsg}/>
+        <InputForm insertNewElement={props.insertNewElement}
+            showMsg={props.showMsg} />
     </div>
 }

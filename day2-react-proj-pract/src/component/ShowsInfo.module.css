@@ -1,16 +1,16 @@
-.entry{
-    background-color: rgb(197, 162, 230);
-    font-size: medium;
-    text-align: center;
-    border-radius: 5px;
-    border: 3px green solid;
-    padding: 7px;
+.entry {
+  background-color: rgb(197, 162, 230);
+  font-size: medium;
+  text-align: center;
+  border-radius: 5px;
+  border: 3px green solid;
+  padding: 7px;
 }
 
-.container{
-    background-color: aliceblue;
-    text-align: center;
-    padding: 5%;
-    border-radius: 5px;
-    margin-bottom: 5%;
+.container {
+  background-color: aliceblue;
+  text-align: center;
+  padding: 5%;
+  border-radius: 5px;
+  margin-bottom: 5%;
 }
