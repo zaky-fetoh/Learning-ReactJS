@@ -1,0 +1,22 @@
+.bttn{
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 5px;
+    border-color: green;
+    margin: 7px;
+    padding: 4px;
+    font-size: 1.5em;
+    /* display: block; */
+}
+
+.control{
+    text-align: center;
+    background-color: rgb(142, 118, 118);
+    padding:15px;
+    border-radius: 5px;
+    border: 2px green solid;
+    padding-bottom: 7px;
+    margin-left:15%;
+    margin-right: 15%;
+
+}
