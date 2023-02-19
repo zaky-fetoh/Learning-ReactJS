@@ -1,7 +1,7 @@
 import LoginForm from "./component/LoginForm";
 import styles from "./app.module.css"
-import { LogginContextProv, LogginContext } from "./store/login-context";
 import react from "react"
+import { LogginContextProv, LogginContext } from "./store/login-context";
 
 import LoggedPage from "./component/LogedPage"
 
@@ -18,9 +18,8 @@ const HomePage = () => {
 function App() {
 
   return (<LogginContextProv>
-    <div className={styles.FormStyle}>
-          <HomePage />
-    </div></LogginContextProv>
+    <HomePage />
+  </LogginContextProv>
   );
 }
 
