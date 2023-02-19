@@ -1,5 +1,6 @@
 import styles from "./LoginForm.module.css"
 import react from "react"
+import { LogginContext } from "../store/login-context"
 
 
 function InputWithLabel(props) {
@@ -12,7 +13,6 @@ function InputWithLabel(props) {
             onChange={props.onChange}
         ></input>
     </>
-
 }
 
 function formReducerfn(preState, action) {
@@ -60,10 +60,11 @@ export default function LoginForm(props) {
     }, [formState.NameStateValue,
     formState.PasswordStateValue])
 
-    
-    const onClickSubmit = (e)=>{
-        e.preventDefault(); 
-        console.log("hee e")
+    const ctx = react.useContext(LogginContext)
+
+    const onClickSubmit = (e) => {
+        e.preventDefault();
+        ctx.doLoggin()
     }
 
 
@@ -82,8 +83,8 @@ export default function LoginForm(props) {
                 dispatcher)}
         /><br />
         <button className={!(formState.valid
-            ) && styles.disabledButton || undefined}
+        ) && styles.disabledButton || undefined}
             onClick={onClickSubmit}
-            >Loggin</button>
+        >Loggin</button>
     </form></div>
 }
