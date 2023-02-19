@@ -9,10 +9,10 @@ function App() {
   const [showTime, setShowTime] = react.useState("")
 
   react.useEffect(()=>{
-    if(!state) return
+    if(!state) return;
     const InterTimer = setInterval(()=>{
       setShowTime((Date.now() - startTime).toString())
-    }, 100)
+    }, 10 )
     return ()=>{if(state)clearInterval(InterTimer)}
   },[state])
 
