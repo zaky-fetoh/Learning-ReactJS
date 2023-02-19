@@ -28,3 +28,8 @@ button{
     border-radius: 10px;
     width: fit-content;
 }
+
+.disabledButton{
+    background-color: gray;
+    pointer-events: none;
+}

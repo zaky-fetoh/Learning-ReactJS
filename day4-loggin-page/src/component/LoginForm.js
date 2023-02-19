@@ -15,8 +15,6 @@ function InputWithLabel(props) {
 
 }
 
-
-
 function formReducerfn(preState, action) {
     const newState = { ...preState }
     if (action.type === "updateName")
@@ -28,6 +26,18 @@ function formReducerfn(preState, action) {
     return newState;
 }
 
+const onChangeFactory = (type, dispatcher) => {
+    return (event) => {
+        dispatcher({
+            type: type, value: event.target.value,
+        })
+    }
+}
+
+const checkForValidity = (name, password) => {
+    return name.includes("@") && password.length > 4;
+}
+
 export default function LoginForm(props) {
 
     const [formState, dispatcher] = react.useReducer(
@@ -36,25 +46,36 @@ export default function LoginForm(props) {
             PasswordStateValue: "",
             valid: false,
         }));
-    const onChangeFactory = (type) => {
-        return (event) => {
+
+    react.useEffect(() => {
+        const timer = setTimeout(() => {
             dispatcher({
-                type: type, value: event.target.value,
+                type: "updateValidity", value: checkForValidity(
+                    formState.NameStateValue,
+                    formState.PasswordStateValue
+                )
             })
-        }
-    }
+        }, 500)
+        return () => { clearTimeout(timer) }
+    }, [formState.NameStateValue,
+    formState.PasswordStateValue])
+
     return <div className={styles.FormStyle}> <form>
         <InputWithLabel label="UName"
             type="text"
             title="InterUserName"
             value={formState.NameStateValue}
-            onChange={onChangeFactory("updateName")} />
+            onChange={onChangeFactory("updateName",
+                dispatcher)} />
         <InputWithLabel label="Password"
             type="password"
             title="InterUserName"
             value={formState.PasswordStateValue}
-            onChange={onChangeFactory("updatePassword")}
+            onChange={onChangeFactory("updatePassword",
+                dispatcher)}
         /><br />
-        <button >Loggin</button>
+        <button className={!(formState.valid
+            ) && styles.disabledButton || undefined}
+            >Loggin</button>
     </form></div>
 }
