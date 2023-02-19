@@ -1,0 +1,30 @@
+*{
+    font-size: large;
+}
+
+label{
+    display: block;
+    text-align: center;
+}
+
+input{
+    text-align: center;
+    margin: 7px;
+}
+button{
+    margin-top: 5px;
+    border: 2px red solid;
+    background-color: blueviolet;
+    color: aliceblue;
+    font-size: large;
+}
+
+
+.FormStyle{
+    display: block;
+    text-align: center;
+    border: 3px red solid;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
