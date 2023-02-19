@@ -60,6 +60,13 @@ export default function LoginForm(props) {
     }, [formState.NameStateValue,
     formState.PasswordStateValue])
 
+    
+    const onClickSubmit = (e)=>{
+        e.preventDefault(); 
+        console.log("hee e")
+    }
+
+
     return <div className={styles.FormStyle}> <form>
         <InputWithLabel label="UName"
             type="text"
@@ -76,6 +83,7 @@ export default function LoginForm(props) {
         /><br />
         <button className={!(formState.valid
             ) && styles.disabledButton || undefined}
+            onClick={onClickSubmit}
             >Loggin</button>
     </form></div>
 }

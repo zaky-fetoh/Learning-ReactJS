@@ -1,7 +1,7 @@
 import react from "react" 
 
 
-export const LogginContext = react.useContext({
+export const LogginContext = react.createContext({
     isLoggin: false, 
     doLoggin: ()=>{}, 
     doLoggout: ()=>{}, 

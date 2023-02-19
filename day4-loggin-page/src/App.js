@@ -1,11 +1,12 @@
 import LoginForm from "./component/LoginForm";
 import styles from "./app.module.css"
+import { LogginContextProv } from "./store/login-context";
 
 function App() {
-  return (
+  return (<LogginContextProv>
     <div className={styles.FormStyle}>
-      <LoginForm/>
-    </div>
+      <LoginForm />
+    </div></LogginContextProv>
   );
 }
 
