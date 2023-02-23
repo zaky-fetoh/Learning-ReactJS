@@ -1,6 +1,6 @@
 import  LoggingPage  from "./pages/LoggingPage";
 import { Context, loginContext } from "./store/login-context";
-import { Navigate, Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import "./App.css"
 import { HomePage } from "./pages/HomePage";
 import React from "react";
@@ -18,7 +18,7 @@ function App() {
   return (
     <Context>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/*" element={<Home/>}/>
       </Routes>
     </Context>
   );
