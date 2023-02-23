@@ -1,0 +1,17 @@
+header{
+    text-align: left;
+    background-color: rgb(159, 127, 189);   
+    margin-top: 0%;
+    padding: .5em;
+    margin-bottom: .5em;
+}
+
+.headerElements{
+    color:aliceblue;
+}
+
+header h4{
+    display: inline;
+    text-align: left;
+    padding-right: 80%;
+}

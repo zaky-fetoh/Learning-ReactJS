@@ -1,5 +1,7 @@
 import styles from "./Login.module.css"
 import react from "react"
+import { loginContext } from "../store/login-context";
+import { Navigate } from "react-router-dom";
 
 function isValidUserNamePassword({ userName, password }) {
     return userName.length >= 3 && password.length >= 4;
@@ -25,6 +27,7 @@ function reducerFn(prev, action) {
 export default function Login(props) {
     const passwordRef = react.useRef()
     const userNameRef = react.useRef()
+    const logCntx = react.useContext(loginContext)
 
 
     const [state, dispatcher] = react.useReducer(reducerFn,
@@ -51,8 +54,9 @@ export default function Login(props) {
     }
     const submitButtonAction = react.useCallback((e) => {
         e.preventDefault();
-        const LoggedIn = isCorrectPasword(state)
-        
+        const LoggedIn_intefier = isCorrectPasword(state)
+        if(LoggedIn_intefier) logCntx.doLogin()
+        window.location.reload(false)
     }, [])
 
     react.useEffect(() => {
