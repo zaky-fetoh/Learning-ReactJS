@@ -1,6 +1,35 @@
 .formContainer{
     text-align: center;
     border-radius: 7px;
-    border: 2px solid red;
+    border: 2px solid green;
+    width: max-content;
+    padding: 1em;
+}
 
+.formContainer input{ 
+    width: max-content;
+    text-align: center;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    font-size: 1.1em;
+}
+
+
+.formContainer button{
+    font-size: 1.1em;
+    margin-bottom: .4em;
+    margin-top:.2em ;
+}
+
+
+.disabled{
+    pointer-events: none;
+    background-color: gray;
+    border: 2px solid red;
+}
+
+
+.enabled{
+    background-color: beige;
+    border: 2px solid green;
 }
