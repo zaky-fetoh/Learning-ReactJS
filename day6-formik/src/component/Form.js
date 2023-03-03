@@ -36,37 +36,55 @@ export default function Form(props) {
         }
     });
 
+    const inputCreator =(name)=>{
+        return <>
+            <input id={name}
+            type={name==="password"? name: "text"}
+            placeholder={name}
+            onBlur={formikHook.handleBlur}
+            onChange={formikHook.handleChange}
+            value={formikHook.values[name]} />
+        <p>{formikHook.touched[name]&& formikHook.errors[name] || "" }</p>
+        </>
+    }
+
 
     return <form onSubmit={formikHook.handleSubmit}>
-        <input id="firstName"
-            type="text"
-            placeholder="First Name"
-            onBlur={formikHook.handleBlur}
-            onChange={formikHook.handleChange}
-            value={formikHook.values.firstName} />
-        <p>{formikHook.touched.firstName && formikHook.errors.firstName || "" }</p>
-        <input id="secondName"
-            type="text"
-            placeholder="Second Name"
-            onBlur={formikHook.handleBlur}
-            onChange={formikHook.handleChange}
-            value={formikHook.values.secondName} />
-        <p>{formikHook.touched.secondName && formikHook.errors.secondName || "" }</p>
-        <input id="email"
-            type="text"
-            placeholder="Email"
-            onBlur={formikHook.handleBlur}
-            onChange={formikHook.handleChange}
-            value={formikHook.values.email} />
-        <p>{formikHook.touched.email && formikHook.errors.email || "" }</p>
-        <input id="password"
-            type="password"
-            placeholder="Password"
-            onBlur={formikHook.handleBlur}
-            onChange={formikHook.handleChange}
-            value={formikHook.values.password} />
-        <p>{formikHook.touched.password && formikHook.errors.password || "" }</p>
+        {Object.keys(initialValues).map(e=>inputCreator(e))}
         <button type="submit"> SUbmit</button>
     </form>
+
+
+    // return <form onSubmit={formikHook.handleSubmit}>
+    //     <input id="firstName"
+    //         type="text"
+    //         placeholder="First Name"
+    //         onBlur={formikHook.handleBlur}
+    //         onChange={formikHook.handleChange}
+    //         value={formikHook.values.firstName} />
+    //     <p>{formikHook.touched.firstName && formikHook.errors.firstName || "" }</p>
+    //     <input id="secondName"
+    //         type="text"
+    //         placeholder="Second Name"
+    //         onBlur={formikHook.handleBlur}
+    //         onChange={formikHook.handleChange}
+    //         value={formikHook.values.secondName} />
+    //     <p>{formikHook.touched.secondName && formikHook.errors.secondName || "" }</p>
+    //     <input id="email"
+    //         type="text"
+    //         placeholder="Email"
+    //         onBlur={formikHook.handleBlur}
+    //         onChange={formikHook.handleChange}
+    //         value={formikHook.values.email} />
+    //     <p>{formikHook.touched.email && formikHook.errors.email || "" }</p>
+    //     <input id="password"
+    //         type="password"
+    //         placeholder="Password"
+    //         onBlur={formikHook.handleBlur}
+    //         onChange={formikHook.handleChange}
+    //         value={formikHook.values.password} />
+    //     <p>{formikHook.touched.password && formikHook.errors.password || "" }</p>
+    //     <button type="submit"> SUbmit</button>
+    // </form>
 }
 
