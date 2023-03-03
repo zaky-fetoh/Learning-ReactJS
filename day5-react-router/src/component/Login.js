@@ -1,7 +1,6 @@
 import styles from "./Login.module.css"
 import react from "react"
 import { loginContext } from "../store/login-context";
-import { Navigate } from "react-router-dom";
 
 function isValidUserNamePassword({ userName, password }) {
     return userName.length >= 3 && password.length >= 4;
