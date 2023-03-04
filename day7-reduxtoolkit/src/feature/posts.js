@@ -1,6 +1,15 @@
 import * as rdtk from "@reduxjs/toolkit"
 
 
+export const featchPosts = rdtk.createAsyncThunk("post/fetch",
+    async(_,thunkAPI)=>{
+        const d = await fetch("https://dummyjson.com/products");
+        return (await d.json()).products
+    }
+)
+
+
+
 const postSlice = rdtk.createSlice({
     name:"post", 
     initialState:{
@@ -23,6 +32,13 @@ const postSlice = rdtk.createSlice({
             })
             return state
         },
+    },
+    extraReducers:builder=>{
+        builder.addCase(featchPosts.fulfilled,(state,action)=>{
+            action.payload.forEach(e => {
+                state.posts.push(e);
+            });
+        })
     }
 })
 

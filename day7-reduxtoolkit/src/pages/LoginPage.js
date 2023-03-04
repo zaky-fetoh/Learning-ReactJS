@@ -4,7 +4,7 @@ import * as Auth from "../feature/auth"
 
 import * as reactRedux from "react-redux"
 
-
+import * as post from "../feature/posts"
 
 export default function (props) {
 
@@ -13,6 +13,7 @@ export default function (props) {
 
     const Form = createForm({userName:"", password:""}, (values) => {
         dispatch(Auth.actions.doLogin({userName:values.userName}))
+        dispatch(post.featchPosts())
         // console.log(authSelect)
         // console.log(values);
         // f.restForm({values:{userName:"", password:""}});
