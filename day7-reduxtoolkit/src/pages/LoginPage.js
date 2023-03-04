@@ -11,10 +11,10 @@ export default function (props) {
     const dispatch = reactRedux.useDispatch();
     const authSelect = reactRedux.useSelector(s=>s.auth )
 
-    const Form = createForm({userName:"", password:""}, (values, f) => {
+    const Form = createForm({userName:"", password:""}, (values) => {
         dispatch(Auth.actions.doLogin({userName:values.userName}))
-        console.log(authSelect)
-        console.log(values);
+        // console.log(authSelect)
+        // console.log(values);
         // f.restForm({values:{userName:"", password:""}});
     })
 
