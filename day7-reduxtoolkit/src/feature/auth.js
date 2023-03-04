@@ -1,4 +1,4 @@
-import rdtk from "@reduxjs/toolkit";
+import * as rdtk from "@reduxjs/toolkit";
 
 const initialState={
     login: false,
@@ -10,15 +10,16 @@ const authSlice = rdtk.createSlice({
     initialState,
     reducers:{
         doLogin:(state, action)=>{
+            console.log("from Auth")
             return {login:true, userName:action.payload.userName};
         },
-        doLogout:(state, action)=>{
+        doLogout:()=>{
             return initialState;
         },
-    }
+    }   
 })
 
 
-export const action = auth.actions;
-export const reducer= auth.reducers;
+export const actions = authSlice.actions;
+export const reducer= authSlice.reducer;
 

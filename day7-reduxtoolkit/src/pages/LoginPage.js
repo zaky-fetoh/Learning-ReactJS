@@ -1,20 +1,25 @@
 import { createForm } from "../component/FormCreator";
 import styles from "./LoginPage.module.css"
+import * as Auth from "../feature/auth"
 
-const initialValues = {
-    userName: "",
-    password: "",
-}
+import * as reactRedux from "react-redux"
 
 
-const Form =  createForm(initialValues, (values,f)=>{
-    console.log(values);
-    f.restForm();
-})
 
+export default function (props) {
 
-export default function(props){
+    const dispatch = reactRedux.useDispatch();
+    const authSelect = reactRedux.useSelector(s=>s.auth )
+
+    const Form = createForm({userName:"", password:""}, (values, f) => {
+        dispatch(Auth.actions.doLogin({userName:values.userName}))
+        console.log(authSelect)
+        console.log(values);
+        // f.restForm({values:{userName:"", password:""}});
+    })
+
     return <div className={styles.container}>
-        <Form/>
+        <Form />
+        {authSelect.login ? <h1>{authSelect.userName}</h1> : ""}
     </div>
 }
